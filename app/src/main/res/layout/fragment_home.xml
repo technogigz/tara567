@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.fragment.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout14"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_13sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:visibility="gone"
+        android:background="@drawable/comman_bg_layout"
+        android:elevation="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/View"
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/line_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/marquu_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:lineSpacingExtra="4dp"
+            android:text=""
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/View"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_a"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:visibility="gone"
+        android:src="@drawable/whataap_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mLayout" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/Whataap_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/_3sdp"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#007AFF"
+        android:visibility="gone"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_a"
+        app:layout_constraintStart_toEndOf="@+id/image_a"
+        app:layout_constraintTop_toTopOf="@+id/image_a" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_b"
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:src="@drawable/whataap_image"
+        android:visibility="gone"
+        android:layout_marginEnd="@dimen/_3sdp"
+        app:layout_constraintEnd_toStartOf="@id/whatsApp_a"
+        app:layout_constraintTop_toBottomOf="@+id/mLayout" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/whatsApp_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:drawablePadding="@dimen/_3sdp"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:gravity="center"
+        android:text=""
+        android:visibility="gone"
+        android:textColor="#007AFF"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/Whataap_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Whataap_number" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Whataap_number">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:elevation="10dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slider">
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:clipToPadding="false"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_marque"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/marque_back"
+                        android:ellipsize="marquee"
+                        android:fontFamily="@font/poppins_semi_bold_600"
+                        android:gravity="center"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:paddingStart="50dp"
+                        android:paddingEnd="50dp"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardBackgroundColor="@color/black"
+                        app:cardCornerRadius="0dp"
+                        app:cardElevation="0dp"
+                        tools:ignore="NestedWeights">
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_depositOnline"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/btn_gradient_back"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:visibility="gone">
+
+
+                            <!--<ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/phone_updated" />
+-->
+                            <TextView
+                                android:id="@+id/depositOnline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="6dp"
+                                android:fontFamily="@font/poppins_semi_bold_600"
+                                android:gravity="center"
+                                android:text="Deposit Online"
+                                android:textColor="@color/main_color"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <!-- <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal"
+                         android:weightSum="2">
+
+                         <LinearLayout
+                             android:layout_weight="1"
+                             android:layout_width="0dp"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal"
+                             android:layout_marginEnd="8dp">
+
+                             <androidx.cardview.widget.CardView
+                                 android:id="@+id/phone"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 app:cardBackgroundColor="@color/black"
+                                 app:cardCornerRadius="0dp"
+                                 app:cardElevation="0dp"
+                                 tools:ignore="NestedWeights">
+
+
+                                 <LinearLayout
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:gravity="center"
+                                     android:orientation="horizontal"
+                                     android:paddingTop="8dp"
+                                     android:paddingBottom="8dp"
+                                     android:background="@drawable/btn_gradient_back">
+
+
+                                     <ImageView
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_gravity="center"
+                                         android:layout_marginStart="10dp"
+                                         android:src="@drawable/phone_updated" />
+
+                                     <TextView
+                                         android:id="@+id/mobileNum"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_marginStart="6dp"
+                                         android:layout_gravity="center"
+                                         android:fontFamily="@font/poppins_semi_bold_600"
+                                         android:gravity="center"
+                                         android:text="Phone"
+                                         android:textColor="@color/main_color"
+                                         android:textSize="12sp"/>
+                                 </LinearLayout>
+                             </androidx.cardview.widget.CardView>
+
+                         </LinearLayout>
+
+
+                         <LinearLayout
+                             android:layout_weight="1"
+                             android:layout_width="0dp"
+                             android:layout_height="wrap_content"
+                             android:layout_marginStart="8dp"
+                             android:orientation="horizontal">
+
+                             <androidx.cardview.widget.CardView
+                                 android:id="@+id/whatsApp"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 app:cardBackgroundColor="@color/black"
+                                 app:cardCornerRadius="0dp"
+                                 app:cardElevation="0dp"
+                                 tools:ignore="NestedWeights">
+
+                                 <LinearLayout
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:gravity="center"
+                                     android:orientation="horizontal"
+                                     android:paddingTop="8dp"
+                                     android:paddingBottom="8dp"
+                                     android:background="@drawable/btn_gradient_back">
+
+                                     <ImageView
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_gravity="center"
+                                         android:src="@drawable/whatsapp_home" />
+
+                                     <TextView
+                                         android:id="@+id/whatsAppNum"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_marginStart="6dp"
+                                         android:layout_gravity="center"
+                                         android:fontFamily="@font/poppins_semi_bold_600"
+                                         android:gravity="center"
+                                         android:text="Whatsapp"
+                                         android:textColor="@color/main_color"
+                                         android:textSize="12sp"/>
+
+                                 </LinearLayout>
+
+                             </androidx.cardview.widget.CardView>
+
+                         </LinearLayout>
+
+                         <LinearLayout
+                             android:layout_weight="1"
+                             android:layout_width="0dp"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal"
+                             android:visibility="gone"
+                             android:layout_marginStart="8dp">
+
+                             <androidx.cardview.widget.CardView
+                                 android:id="@+id/telegram"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 app:cardBackgroundColor="#000"
+                                 app:cardCornerRadius="0dp"
+                                 app:cardElevation="0dp"
+                                 tools:ignore="NestedWeights">
+
+                                 <LinearLayout
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:gravity="center"
+                                     android:orientation="horizontal"
+                                     android:paddingTop="8dp"
+                                     android:paddingBottom="8dp"
+                                     android:background="@drawable/btn_gradient_back">
+
+
+                                 <ImageView
+                                         android:layout_width="22dp"
+                                         android:layout_height="22dp"
+                                         android:src="@drawable/telegram_img" />
+
+                                     <TextView
+                                         android:id="@+id/telegramNum"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_marginStart="6dp"
+                                         android:layout_gravity="center"
+                                         android:fontFamily="@font/poppins_semi_bold_600"
+                                         android:gravity="center"
+                                         android:text="Telegram"
+                                         android:textColor="@color/main_color"
+                                         android:textSize="12sp"/>
+                                 </LinearLayout>
+
+                             </androidx.cardview.widget.CardView>
+
+                         </LinearLayout>
+
+                     </LinearLayout>-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_homeddd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/otherGames"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/starline"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_gradient_back"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:paddingTop="8dp"
+                                    android:paddingBottom="8dp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:src="@drawable/play_starline" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="6dp"
+                                        android:fontFamily="@font/poppins_semi_bold_600"
+                                        android:gravity="center"
+                                        android:text="Play StarLine"
+                                        android:textColor="@color/main_color"
+                                        android:textSize="12sp" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_add_funds"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/addPoints"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/black"
+                                app:cardCornerRadius="0dp"
+                                app:cardElevation="0dp"
+                                tools:ignore="NestedWeights">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/btn_gradient_back"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:paddingTop="8dp"
+                                    android:paddingBottom="8dp">
+
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="10dp"
+                                        android:src="@drawable/add_points_wallet" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="6dp"
+                                        android:fontFamily="@font/poppins_semi_bold_600"
+                                        android:gravity="center"
+                                        android:text="Add Points (UPI)"
+                                        android:textColor="@color/main_color"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/Whataap_number">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/game_card_updated" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- vertical guidelines-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="10dp" />
+
+    <!-- vertical guidelines-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.975" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

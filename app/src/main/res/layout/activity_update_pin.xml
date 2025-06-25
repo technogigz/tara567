@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdatePinActivity"
+    android:orientation="vertical"
+    android:background="@color/main_color">
+
+    <include layout="@layout/progress_bar_layout"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:background="@color/main_color">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="96dp"
+                                android:src="@drawable/crazy_matka_splash_logo"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="54dp"/>
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/login_background"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginTop="-48dp"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Create Your MPIN"
+                                android:fontFamily="@font/poppins_bold_700"
+                                android:textSize="24sp"
+                                android:textColor="@color/text_main_color"/>
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColorHint="@color/hint_text"
+                                app:boxBackgroundColor="@color/main_color"
+                                app:hintEnabled="true"
+                                app:boxStrokeWidth="0dp"
+                                app:boxStrokeWidthFocused="0dp"
+                                app:boxBackgroundMode="none"
+                                app:hintAnimationEnabled="false"
+                                app:passwordToggleEnabled="true"
+                                app:passwordToggleTint="@color/hint_text"
+                                android:layout_marginTop="36dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/mPin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="New MPIN"
+                                android:imeOptions="actionDone"
+                                android:inputType="numberPassword"
+                                android:maxLength="4"
+                                android:maxLines="1"
+                                android:textColor="@color/text_main_color"
+                                android:textSize="14sp"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingBottom="0dp"
+                                android:includeFontPadding="false"
+                                android:fontFamily="@font/poppins_regular_400"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/hint_text"/>
+
+                            <TextView
+                                android:id="@+id/tv_error_mpin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/error_text"
+                                android:fontFamily="@font/poppins_semi_bold_600"
+                                android:layout_marginTop="10dp"
+                                android:textSize="12sp"
+                                android:visibility="gone"/>
+
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/mb_submit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:backgroundTint="@null"
+                                android:background="@drawable/btn_gradient_background"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="36dp"
+                                android:layout_marginBottom="16dp"
+                                android:text="Submit"
+                                android:textColor="@color/white"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:textAllCaps="false"
+                                android:letterSpacing="0"
+                                android:padding="6dp"
+                                app:rippleColor="@color/white"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

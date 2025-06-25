@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.fragment.GameRatesFragment">
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:text="Game Win rate For All Bids"
+            android:textColor="#0179FF"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/mView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/view_bg"
+            app:layout_constraintTop_toBottomOf="@+id/txt" />
+
+
+        <TextView
+            android:id="@+id/tvSingleDigit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:background="@drawable/comman_bg_layout"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="@font/poppins_regular_400"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_13sdp"
+            android:text="Single Digit :- 9.7"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_11ssp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/mView" />
+
+        <!-- Jodi Digit -->
+        <TextView
+            android:id="@+id/tvJodiDigit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:background="@drawable/comman_bg_layout"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="@font/poppins_regular_400"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_13sdp"
+            android:text="Jodi Digit :- 97.0"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSingleDigit" />
+
+        <!-- Single Panna -->
+        <TextView
+            android:id="@+id/tvRedBrackets"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:background="@drawable/comman_bg_layout"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="@font/poppins_regular_400"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_13sdp"
+            android:text="Red Brackets :- ₹97.0"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvJodiDigit" />
+
+
+        <TextView
+            android:id="@+id/tvSinglePanna"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:background="@drawable/comman_bg_layout"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="@font/poppins_regular_400"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_13sdp"
+            android:text="Singe Pana :- 160.0"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRedBrackets" />
+
+
+        <!-- Double Panna -->
+        <TextView
+            android:id="@+id/tvDoublePanna"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:background="@drawable/comman_bg_layout"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="@font/poppins_regular_400"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_13sdp"
+            android:text="Double Pana :- 320.0"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSinglePanna" />
+
+        <!-- Triple Panna -->
+        <TextView
+            android:id="@+id/tvTriplePanna"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:background="@drawable/comman_bg_layout"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="@font/poppins_regular_400"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_13sdp"
+            android:text="Triple Pana :- ₹1000.0"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDoublePanna" />
+
+        <!-- Half Sangam -->
+        <TextView
+            android:id="@+id/tvHalfSangam"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:background="@drawable/comman_bg_layout"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="@font/poppins_regular_400"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_13sdp"
+            android:text="Half Sangam Digits :- 1000.0"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTriplePanna" />
+
+        <!-- Full Sangam -->
+        <TextView
+            android:id="@+id/tvFullSangam"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:background="@drawable/comman_bg_layout"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="@font/poppins_regular_400"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_13sdp"
+            android:text="Full Sangam Digits :- 10000.0"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHalfSangam" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtbottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:text="Fun Starline Game win Rate"
+            android:textColor="#0179FF"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_22sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFullSangam" />
+
+        <View
+            android:id="@+id/mViewbottom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/view_bg"
+            app:layout_constraintTop_toBottomOf="@+id/txtbottom" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtJodi_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:text="Fun Jodi Win Rate"
+            android:textColor="#0179FF"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_22sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mViewbottom" />
+        <View
+            android:id="@+id/mViewJodi_rate"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/view_bg"
+            app:layout_constraintTop_toBottomOf="@+id/txtJodi_rate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:background="@drawable/comman_bg_layout"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="@font/poppins_regular_400"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_13sdp"
+            android:text="NOT AVAILABLE :- ₹0"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_11ssp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mViewJodi_rate" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/header_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/user_color_blue_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/mLi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="3"
+            app:layout_constraintBottom_toBottomOf="@+id/header_icon"
+            app:layout_constraintStart_toEndOf="@id/header_icon"
+            app:layout_constraintTop_toTopOf="@id/header_icon">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/muserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold_700"
+                android:text="Your Name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/muserPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium_500"
+                android:text="+91-9090909090"
+                android:textColor="#2D3037"
+                android:textSize="@dimen/_9ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mCurrentLoginTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium_500"
+                android:text="Since 19/12/2024"
+                android:textColor="#2D3037"
+                android:textSize="@dimen/_9ssp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/side_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/iv_close_image"
+            app:layout_constraintBottom_toBottomOf="@id/mLi"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mLi" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mAccount_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:src="@drawable/iv_account_svg"
+            app:layout_constraintEnd_toEndOf="@+id/header_icon"
+            app:layout_constraintStart_toStartOf="@+id/header_icon"
+            app:layout_constraintTop_toBottomOf="@+id/header_icon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mAccount_Statement"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium_500"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="Account Statement"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/mAccount_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mAccount_image"
+            app:layout_constraintTop_toTopOf="@+id/mAccount_image" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mGame_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:src="@drawable/iv_game_rate_svg"
+            app:layout_constraintEnd_toEndOf="@+id/mAccount_image"
+            app:layout_constraintStart_toStartOf="@+id/mAccount_image"
+            app:layout_constraintTop_toBottomOf="@+id/mAccount_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mGame_rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium_500"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="Game rates"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/mGame_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mGame_image"
+            app:layout_constraintTop_toTopOf="@+id/mGame_image" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mTerms_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:src="@drawable/iv_teram_svg"
+            app:layout_constraintEnd_toEndOf="@+id/mGame_image"
+            app:layout_constraintStart_toStartOf="@+id/mGame_image"
+            app:layout_constraintTop_toBottomOf="@+id/mGame_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mTerms_Conditions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium_500"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="Terms &amp; Conditions"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/mTerms_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mTerms_image"
+            app:layout_constraintTop_toTopOf="@+id/mTerms_image" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mVideos_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:src="@drawable/iv_vedi_image"
+            app:layout_constraintEnd_toEndOf="@+id/mTerms_image"
+            app:layout_constraintStart_toStartOf="@+id/mTerms_image"
+            app:layout_constraintTop_toBottomOf="@+id/mTerms_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mVideos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium_500"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="Videos"
+            android:layout_marginTop="@dimen/_8ssp"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/mVideos_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mVideos_image"
+            app:layout_constraintTop_toTopOf="@+id/mVideos_image" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mLogout_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:src="@drawable/iv_logout_svg"
+            app:layout_constraintEnd_toEndOf="@+id/mVideos_image"
+            app:layout_constraintStart_toStartOf="@+id/mVideos_image"
+            app:layout_constraintTop_toBottomOf="@+id/mVideos_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mLogout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/poppins_medium_500"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="Logout"
+            android:textColor="#2D3037"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/mLogout_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mLogout_image"
+            app:layout_constraintTop_toTopOf="@+id/mLogout_image" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

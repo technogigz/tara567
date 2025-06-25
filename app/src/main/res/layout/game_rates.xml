@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".dashboard.Game_rates">
+    <include layout="@layout/progress_bar_layout" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backBidHistImage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/back_arrow_color"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium_500"
+            android:text="Approved Credit History"
+            android:textColor="@color/toolbar_text"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/mfilter"
+            app:layout_constraintStart_toEndOf="@+id/backBidHistImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mfilter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/iv_filter"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/single_digit_live_rate">
+
+                    <TextView
+                        android:id="@+id/SingleDigit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium_500"
+                        android:text="Single Digit"
+                        android:textColor="@color/toolbar_text"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="14sp" />
+
+                    <!--<ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/rate_single_digit"
+                        android:layout_gravity="center"/>-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/single_digit_val_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="10"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/single_digit_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:layout_gravity="center"
+                                android:text=" - "
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/single_digit_val_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="95"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@drawable/jodi_digit_live_rate"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/JodiDigit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium_500"
+                        android:text="Jodi Digit"
+                        android:textColor="@color/toolbar_text"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:textSize="14sp" />
+
+                    <!--  <ImageView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:src="@drawable/jodi_digit_rate"
+                          android:layout_marginTop="8dp"
+                          android:layout_marginBottom="8dp"
+                          android:layout_gravity="center"/>-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true">
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/jodi_digit_val_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="10"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/jodi_digit_val_1textView9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:layout_gravity="center"
+                                android:text=" - "
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/jodi_digit_val_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="95"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/single_panna_live_rate"
+                    android:layout_marginTop="16dp" >
+
+
+                    <TextView
+                        android:id="@+id/SinglePanna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium_500"
+                        android:text="Single Panna"
+                        android:textColor="@color/toolbar_text"
+                        android:textSize="14sp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+
+                    <!--<ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/rate_single_panna"
+                        android:layout_gravity="center"/>-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/single_pana_val_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="10"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/single_pana_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:layout_gravity="center"
+                                android:text=" - "
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/single_pana_val_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="95"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/double_panna_live_rate"
+                    android:layout_marginTop="16dp">
+
+
+                    <TextView
+                        android:id="@+id/DoublePanna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium_500"
+                        android:text="Double Panna"
+                        android:textColor="@color/toolbar_text"
+                        android:textSize="14sp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+
+                    <!--  <ImageView
+                          android:layout_width="42dp"
+                          android:layout_height="42dp"
+                          android:src="@drawable/rate_double_panna"
+                          android:layout_gravity="center"/>-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/double_pana_val_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="10"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/double_pana_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:layout_gravity="center"
+                                android:text=" - "
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/double_pana_val_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="95"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/tripple_panna_live_rate"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/TriplePanna"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium_500"
+                        android:text="Triple Panna"
+                        android:textColor="@color/toolbar_text"
+                        android:textSize="14sp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+
+                    <!--<ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/rate_triple_panna"
+                        android:layout_gravity="center"/>-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true">
+
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tripple_pana_val_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="10"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/tripple_pana_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:layout_gravity="center"
+                                android:text=" - "
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/tripple_pana_val_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="95"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/half_sangam_live_rate"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/HalfSangam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium_500"
+                        android:text="Half Sangam"
+                        android:textColor="@color/toolbar_text"
+                        android:textSize="14sp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+
+                    <!-- <ImageView
+                         android:layout_width="42dp"
+                         android:layout_height="42dp"
+                         android:src="@drawable/rate_half_sangam"
+                         android:layout_gravity="center"/>-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true">
+
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/half_sangam_val_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="10"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/half_sangam_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:layout_gravity="center"
+                                android:text=" - "
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/half_sangam_val_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="95"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/full_sangam_live_rate"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/FullSangam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium_500"
+                        android:text="Full Sangam"
+                        android:textColor="@color/toolbar_text"
+                        android:textSize="14sp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+
+
+                    <!--  <ImageView
+                          android:layout_width="42dp"
+                          android:layout_height="42dp"
+                          android:src="@drawable/rate_full_sangam"
+                          android:layout_gravity="center"/>-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true">
+
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/full_sangam_val_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="10"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/full_sangam_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:layout_gravity="center"
+                                android:text=" - "
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/full_sangam_val_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/poppins_medium_500"
+                                android:text="95"
+                                android:textColor="@color/toolbar_text"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

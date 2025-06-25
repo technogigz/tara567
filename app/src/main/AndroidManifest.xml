@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/update_app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/update_app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DoctorMatka"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".dashboard.allbis.ui.wallet.AddBankDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.allbis.ui.wallet.AddUPIFundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.allbis.ui.wallet.DepositHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.allbis.ui.wallet.ManualDepositUploadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.allbis.ui.wallet.PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.ResendPinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.allbis.ui.WithdrawFundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.fragment.PassBookActivity"
+            android:exported="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".dashboard.allbis.ui.ApprovedDebitHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.allbis.ui.allbids.ApprovedCreditHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.allbis.ui.allbids.FundRequestHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home.HomePageActivity"
+            android:exported="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".dashboard.Dashboard"
+            android:exported="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".new_ui_update.EnterMPINActivity"
+            android:exported="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".dashboard.FundRequestAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.DepositOnlineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Wallet.NewAddFundActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Notification"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ManagePaytmActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ManageGooglePayActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ManagePhonePeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UpdatePinActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".starline.StarLine"
+            android:exported="false" />
+        <activity
+            android:name=".starline.StarLineBidPlacer"
+            android:exported="false" />
+        <activity
+            android:name=".starline.StarLineGames"
+            android:exported="false" />
+        <activity
+            android:name=".starline.StarLineGameBidHistory"
+            android:exported="false"
+            android:label="StarLine Bid History" />
+        <activity
+            android:name=".starline.StarLineGameWinHistory"
+            android:exported="false"
+            android:label="StarLine Win History" />
+        <activity
+            android:name=".mainGames.bidPlacer"
+            android:exported="false" />
+        <activity
+            android:name=".mainGames.Games"
+            android:exported="false" />
+        <activity
+            android:name=".Wallet.AddFund"
+            android:exported="false" />
+        <activity
+            android:name=".Wallet.Wallet_withdrawal"
+            android:exported="false" />
+        <activity
+            android:name=".Wallet.WalletTransfer"
+            android:exported="false" />
+        <activity
+            android:name=".Wallet.Wallet"
+            android:exported="false" />
+        <activity
+            android:name=".Wallet.PaymentMethodOTPVerification"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.HowToPlay"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.Change_password"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.Contact_us"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.Game_rates"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.allbis.ui.allbids.BidHistory"
+            android:exported="false"
+            android:label="Bid History" />
+        <activity
+            android:name=".dashboard.Win_history"
+            android:exported="false"
+            android:label="Win History" />
+        <activity
+            android:name=".dashboard.User_profile"
+            android:exported="false" />
+        <activity
+            android:name=".Maintenance"
+            android:exported="false" />
+        <activity
+            android:name=".WebView"
+            android:exported="false" />
+        <activity
+            android:name=".NewPassword"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotOtp"
+            android:exported="false" />
+        <activity
+            android:name=".OtpVerification"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".Security"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

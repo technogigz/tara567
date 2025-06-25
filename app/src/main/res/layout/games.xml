@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".mainGames.Games">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        android:scrollIndicators="none">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/gamesBackImageView"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/back_arrow_color" />
+
+                <TextView
+                    android:id="@+id/gameTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/poppins_medium_500"
+                    android:text="Title"
+                    android:textColor="@color/toolbar_text"
+                    android:textSize="@dimen/_13ssp" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout14"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/mLenarOneLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/Single_Digit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/comman_bg_layout"
+                        android:elevation="@dimen/_3sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/mSingle_digit_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:src="@drawable/single_digit_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/mView_single"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:background="#0179FF"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mSingle_digit_image" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:fontFamily="@font/poppins_medium_500"
+                            android:text="Single Digit"
+                            android:textColor="#2D3037"
+                            android:textSize="@dimen/_9ssp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mView_single" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/Jodi_Digit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:background="@drawable/comman_bg_layout"
+                        android:elevation="@dimen/_3sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/mJodi_digit_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:src="@drawable/jodi_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/mView_jodi"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:background="#0179FF"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mJodi_digit_image" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:fontFamily="@font/poppins_medium_500"
+                            android:text="Jodi Digit"
+                            android:textColor="#2D3037"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            android:textSize="@dimen/_9ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mView_jodi" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/mLenarTwoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mLenarOneLayout">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/Single_Pana"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/comman_bg_layout"
+                        android:elevation="@dimen/_3sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/mSingle_Panna_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:elevation="@dimen/_3sdp"
+                            android:src="@drawable/single_panna_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/mView_single_panna"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:background="#02B0B1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mSingle_Panna_image" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:fontFamily="@font/poppins_medium_500"
+                            android:text="Single Panna"
+                            android:textColor="#2D3037"
+                            android:textSize="@dimen/_9ssp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mView_single_panna" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/Double_Pana"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/comman_bg_layout"
+                        android:elevation="@dimen/_3sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/mDouble_digit_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:src="@drawable/double_panna_image"
+                            android:elevation="@dimen/_3sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/mView_Double"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:background="#A002B1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mDouble_digit_image" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:fontFamily="@font/poppins_medium_500"
+                            android:text="Double Panna"
+                            android:textColor="#2D3037"
+                            android:textSize="@dimen/_9ssp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mView_Double" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/mLenarThreeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mLenarTwoLayout">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/Triple_Pana"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/comman_bg_layout"
+                        android:elevation="@dimen/_3sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/mTriple_Panna_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:src="@drawable/triple_panna_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:elevation="@dimen/_3sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/mView_Triple_panna"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:background="#17C531"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mTriple_Panna_image" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:fontFamily="@font/poppins_medium_500"
+                            android:text="Triple Panna"
+                            android:textColor="#2D3037"
+                            android:textSize="@dimen/_9ssp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mView_Triple_panna" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/Half_Sangam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/comman_bg_layout"
+                        android:elevation="@dimen/_3sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/mHlaf_digit_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:src="@drawable/half_panna_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:elevation="@dimen/_3sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/mView_Hlaf"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:background="#06B1DC"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mHlaf_digit_image" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:fontFamily="@font/poppins_medium_500"
+                            android:text="Half Sangam"
+                            android:textColor="#2D3037"
+                            android:textSize="@dimen/_9ssp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mView_Hlaf" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/mLenarFourLayout"
+                    android:layout_width="@dimen/_154sdp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mLenarThreeLayout">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/Pana"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        android:background="@drawable/comman_bg_layout"
+                        android:elevation="@dimen/_3sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/mPanna_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:src="@drawable/triple_panna_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:elevation="@dimen/_3sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/mView_panna"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:background="#17C531"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mPanna_image" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:fontFamily="@font/poppins_medium_500"
+                            android:text="Triple Panna"
+                            android:textColor="#2D3037"
+                            android:textSize="@dimen/_12ssp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mView_panna" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/mSangam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/comman_bg_layout"
+                        android:elevation="@dimen/_3sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/mHimage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_13sdp"
+                            android:src="@drawable/half_panna_image"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:elevation="@dimen/_3sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/mView_Hlaf_View"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:background="#06B1DC"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mHimage" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:fontFamily="@font/poppins_medium_500"
+                            android:text="Full Sangam"
+                            android:textColor="#2D3037"
+                            android:textSize="@dimen/_9ssp"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mView_Hlaf_View" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <!-- <ImageView
+                     android:id="@+id/Single_Digit"
+                     android:layout_width="130dp"
+                     android:layout_height="130dp"
+                     android:src="@drawable/single_digit"
+                     app:layout_constraintBottom_toTopOf="@+id/Single_Pana"
+                     app:layout_constraintEnd_toStartOf="@+id/Jodi_Digit"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent" />
+
+                 <ImageView
+                     android:id="@+id/Jodi_Digit"
+                     android:layout_width="130dp"
+                     android:layout_height="130dp"
+                     android:src="@drawable/jodi_digit"
+                     app:layout_constraintBottom_toTopOf="@+id/Double_Pana"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toEndOf="@+id/Single_Digit"
+                     app:layout_constraintTop_toTopOf="parent" />
+
+                 <ImageView
+                     android:id="@+id/Single_Pana"
+                     android:layout_width="130dp"
+                     android:layout_height="130dp"
+                     android:src="@drawable/single_panna"
+                     app:layout_constraintBottom_toTopOf="@+id/Triple_Pana"
+                     app:layout_constraintEnd_toStartOf="@+id/Double_Pana"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toBottomOf="@+id/Single_Digit" />
+
+                 <ImageView
+                     android:id="@+id/Double_Pana"
+                     android:layout_width="130dp"
+                     android:layout_height="130dp"
+                     android:src="@drawable/double_panna"
+                     app:layout_constraintBottom_toTopOf="@+id/Half_Sangam"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toEndOf="@+id/Single_Pana"
+                     app:layout_constraintTop_toBottomOf="@+id/Jodi_Digit" />
+
+                 <ImageView
+                     android:id="@+id/Triple_Pana"
+                     android:layout_width="130dp"
+                     android:layout_height="130dp"
+                     android:src="@drawable/tripal_panna"
+                     app:layout_constraintBottom_toTopOf="@+id/Full_Sangam"
+                     app:layout_constraintEnd_toStartOf="@+id/Half_Sangam"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toBottomOf="@+id/Single_Pana" />
+
+                 <ImageView
+                     android:id="@+id/Half_Sangam"
+                     android:layout_width="130dp"
+                     android:layout_height="130dp"
+                     android:src="@drawable/half_sangam"
+                     app:layout_constraintBottom_toTopOf="@+id/Full_Sangam"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toEndOf="@+id/Triple_Pana"
+                     app:layout_constraintTop_toBottomOf="@+id/Double_Pana" />
+
+                 <ImageView
+                     android:id="@+id/Full_Sangam"
+                     android:layout_width="130dp"
+                     android:layout_height="130dp"
+                     android:src="@drawable/full_sangam"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toBottomOf="@+id/Triple_Pana" />-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

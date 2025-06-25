@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dashboard.allbis.ui.WithdrawFundActivity">
+
+    <include layout="@layout/progress_bar_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backBidHistImage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/back_arrow_color"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium_500"
+            android:text="Withdraw Fund"
+            android:textColor="@color/toolbar_text"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/mfilter"
+            app:layout_constraintStart_toEndOf="@+id/backBidHistImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mfilter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/iv_filter"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/send_request"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mAddFoundLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/radiu_8dp_bg"
+                android:elevation="@dimen/_3sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/mCredit_history_image"
+                    android:layout_width="@dimen/_27sdp"
+                    android:layout_height="@dimen/_27sdp"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_11sdp"
+                    android:layout_marginBottom="@dimen/_14sdp"
+                    android:background="@drawable/request_type_bg"
+                    android:elevation="@dimen/_5sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/iv_request_type"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mWalletBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="₹100.0"
+                    android:textColor="#0179FF"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontFamily="@font/poppins_semi_bold_600"
+                    app:layout_constraintStart_toEndOf="@+id/mCredit_history_image"
+                    app:layout_constraintTop_toTopOf="@+id/mCredit_history_image" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mTxtBalance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-4dp"
+                    android:text="Tatal Wallet Balance"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontFamily="@font/poppins_regular_400"
+                    app:layout_constraintStart_toStartOf="@+id/mWalletBalance"
+                    app:layout_constraintTop_toBottomOf="@+id/mWalletBalance" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:background="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/mAddFoundLayout">
+
+                <!-- Minimum Withdraw Text -->
+                <ImageView
+                    android:id="@+id/icon_min_withdraw"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:src="@drawable/yes_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/tv_min_withdraw"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Minimum Withdrawal is 1000/- Rs."
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon_min_withdraw"
+                    app:layout_constraintTop_toTopOf="@id/icon_min_withdraw" />
+                <!-- Maximum Withdraw Text -->
+                <ImageView
+                    android:id="@+id/icon_max_withdraw"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12ssp"
+                    android:src="@drawable/yes_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_min_withdraw" />
+
+                <TextView
+                    android:id="@+id/tv_max_withdraw"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:text="Maximum Withdrawal is 250000/- Rs Per Day."
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon_max_withdraw"
+                    app:layout_constraintTop_toTopOf="@id/icon_max_withdraw" />
+                <!-- Withdrawal Once a Day -->
+                <ImageView
+                    android:id="@+id/_a"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:src="@drawable/yes_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_max_withdraw" />
+                <TextView
+                    android:id="@+id/day"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="Withdrawal Request Timing is Morning 8:00 AM to 10:00 AM, on all 7 days of the week."
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/_a"
+                    app:layout_constraintTop_toTopOf="@id/_a" />
+                <ImageView
+                    android:id="@+id/_b"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_17sdp"
+                    android:src="@drawable/yes_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/_a" />
+                <TextView
+                    android:id="@+id/day_a"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="Withdrawal will be given only once a day."
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/_b"
+                    app:layout_constraintTop_toTopOf="@id/_b" />
+                <ImageView
+                    android:id="@+id/_c"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:src="@drawable/yes_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/_b" />
+                <TextView
+                    android:id="@+id/day_c"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="Please confirm that the bank details you have entered are correct. If incorrect bank details are entered, it is not our responsibility."
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/_c"
+                    app:layout_constraintTop_toTopOf="@id/_c" />
+                <ImageView
+                    android:id="@+id/_d"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_35sdp"
+                    android:src="@drawable/yes_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/_c" />
+                <TextView
+                    android:id="@+id/day_d"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="
+After submitting the withdrawal request, if there is no valid balance in your wallet, the request will be automatically declined."
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/_d"
+                    app:layout_constraintTop_toTopOf="@id/_d" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Query Call Section -->
+                <ImageView
+                    android:id="@+id/icon_whatsapp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_60sdp"
+                    android:contentDescription="WhatsApp Icon"
+                    android:src="@drawable/whatsapp_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/_d" />
+
+                <TextView
+                    android:id="@+id/tv_query_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:fontFamily="@font/poppins_bold_700"
+                    android:text="Call or WhatsApp for Queries on:"
+                    android:textColor="#2D3037"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintStart_toEndOf="@id/icon_whatsapp"
+                    app:layout_constraintTop_toTopOf="@id/icon_whatsapp" />
+
+                <TextView
+                    android:id="@+id/tv_whatsapp_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_extr_bold_800"
+                    android:text="9956770567"
+                    android:textColor="#007AFF"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tv_query_call"
+                    app:layout_constraintTop_toBottomOf="@id/tv_query_call" />
+
+                <TextView
+                    android:id="@+id/tv_query_timing"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/poppins_regular_400"
+                    android:text="Monday To Sunday (Timing 11:00 AM To 11:30 PM)"
+                    android:textColor="#2D3037"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_whatsapp_number"
+                    app:layout_constraintTop_toBottomOf="@id/tv_whatsapp_number" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_27sdp"
+                android:fontFamily="@font/poppins_semi_bold_600"
+                android:text="Withdraw Fund"
+                android:textColor="#2D3037"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mlayout" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mFullNameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:background="@drawable/enter_edit_text_shpe"
+                android:paddingVertical="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/txt">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/points"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:background="@null"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="@font/poppins_medium_500"
+                    android:hint="Enter withdraw points"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:paddingVertical="@dimen/_4sdp"
+                    android:paddingStart="@dimen/_7sdp"
+                    android:textSize="@dimen/_9ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/mEnter_Image_grey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mEnter_Image_grey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/iv_comman_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_background"
+                android:gravity="left|center"
+                app:layout_constraintTop_toBottomOf="@+id/mFullNameLayout">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/hint_text"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/withdrawalBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:background="@drawable/btn_blue_bg"
+        android:elevation="@dimen/_3sdp"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="SEND REQUEST"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

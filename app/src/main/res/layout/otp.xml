@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".OtpVerification">
+
+    <include layout="@layout/progress_bar_layout"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mBackImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:padding="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:src="@drawable/back_arrow_image"
+        app:layout_constraintEnd_toStartOf="@+id/mback_btn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mback_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:text="BACK"
+        android:padding="@dimen/_2sdp"
+        android:textColor="@color/blue_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mBackImage" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/EnterNumberTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:fontFamily="@font/poppins_extr_bold_800"
+        android:text="ENTER OTP"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/_22ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mEnterNumberImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:padding="@dimen/_15sdp"
+        android:src="@drawable/mynaui_mobile"
+        app:layout_constraintBottom_toBottomOf="@id/EnterNumberTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/EnterNumberTitle" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mTxt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-11dp"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:text="Verify your mobile number"
+        android:textColor="@color/hint_text"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintStart_toStartOf="@id/EnterNumberTitle"
+        app:layout_constraintTop_toBottomOf="@+id/EnterNumberTitle" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="@drawable/enter_otp_shpe"
+        android:elevation="@dimen/_1sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/mTxt_title">
+
+        <com.myTara567.app.new_ui_update.OtpEditText
+            android:id="@+id/otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:cursorVisible="true"
+            android:digits="1234567890"
+            android:gravity="center"
+            android:hint="****"
+            android:inputType="number"
+            android:maxLength="4"
+            android:textCursorDrawable="@drawable/custom_cursor_drawable"
+            android:textColor="@color/semi_transparent_grey"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/otpTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_medium_500"
+        android:text="24 Seconds remaining..."
+        android:textColor="@color/blue_color"
+        android:textSize="@dimen/_10ssp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/mLayout"
+        app:layout_constraintTop_toBottomOf="@+id/mLayout" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/resendOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_13sdp"
+        android:fontFamily="@font/poppins_medium_500"
+        android:padding="@dimen/_4sdp"
+        android:text="Resend ?"
+        android:textColor="@color/blue_color"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/mLayout"
+        app:layout_constraintTop_toBottomOf="@+id/mLayout" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/verifyOtp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:background="@drawable/btn_blue_bg"
+        android:elevation="@dimen/_3sdp"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="VERIFY"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otpTimer" />
+
+    <LinearLayout
+        android:id="@+id/singup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verifyOtp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_regular_400"
+            android:text="Have an account?"
+            android:textSize="@dimen/_8ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:text="Sign In"
+            android:textColor="@color/blue_color"
+            android:textSize="@dimen/_9ssp" />
+
+    </LinearLayout>
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="96dp"
+                android:src="@drawable/crazy_matka_splash_logo"
+                android:layout_marginTop="16dp"/>
+
+
+
+            <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+                android:layout_margin="16dp"
+                android:padding="16dp"
+                android:background="@drawable/login_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Verification Code"
+                    android:fontFamily="@font/poppins_bold_700"
+                    android:textSize="28sp"
+                    android:textColor="@color/text_main_color"
+                    android:layout_marginTop="16dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Wel’ll text you on"
+                        android:fontFamily="@font/poppins_medium_500"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_main_color"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:id="@+id/tv_mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="445545455"
+                        android:fontFamily="@font/poppins_medium_500"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_main_color"
+                        android:textAlignment="center"
+                        android:layout_marginStart="6dp"/>
+
+                </LinearLayout>
+
+
+
+
+                <com.chaos.view.PinView
+            android:id="@+id/otp"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:cursorVisible="true"
+            android:focusable="true"
+                    android:layout_gravity="center"
+            android:hint="&#45;&#45;&#45;&#45;"
+            android:inputType="number"
+            android:itemBackground="@drawable/filled_dot"
+            android:textColor="@color/text_main_color"
+            android:textColorHint="@color/text_main_color"
+            android:textSize="16sp"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    app:cursorColor="@color/text_main_color"
+                    app:cursorWidth="2dp"
+                    app:hideLineWhenFilled="false"
+                    app:itemCount="4"
+                    app:itemHeight="54dp"
+                    app:itemSpacing="10dp"
+                    app:itemWidth="54dp"
+                    app:lineColor="#00000000"
+                    app:viewType="rectangle" />
+
+                <TextView
+                    android:id="@+id/tv_error_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/error_text"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:layout_marginTop="12dp"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
+
+
+
+                <TextView
+                    android:id="@+id/resendOtp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:fontFamily="@font/poppins_bold_700"
+                    android:text="Resend"
+                    android:textColor="@color/text_main_color"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="gone"
+                    android:background="?android:attr/selectableItemBackground"/>
+
+                <TextView
+                    android:id="@+id/otpTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold_600"
+                    android:text="00:00"
+                    android:textColor="@color/text_main_color"
+                    android:layout_gravity="center"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    android:layout_marginTop="36dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/verifyOtp"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/btn_gradient_back"
+                    android:text="Continue"
+                    android:textColor="@color/btn_txt_color"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_medium_500"
+                    android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    </LinearLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

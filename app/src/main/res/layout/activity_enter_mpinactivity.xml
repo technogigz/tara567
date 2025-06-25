@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".new_ui_update.EnterMPINActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mBackImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:src="@drawable/back_arrow_image"
+        app:layout_constraintEnd_toStartOf="@+id/appCompatTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:text="BACK"
+        android:textColor="@color/blue_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mBackImage" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/EnterNumberTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:fontFamily="@font/poppins_extr_bold_800"
+        android:text="MPIN"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/_17ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mEnterNumberImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:padding="@dimen/_15sdp"
+        android:src="@drawable/mpin_image"
+        app:layout_constraintBottom_toBottomOf="@id/EnterNumberTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/EnterNumberTitle" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mTxt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-11dp"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:text="Create MPIN for login"
+        android:textColor="@color/hint_text"
+        android:textSize="@dimen/_7ssp"
+        app:layout_constraintStart_toStartOf="@id/EnterNumberTitle"
+        app:layout_constraintTop_toBottomOf="@+id/EnterNumberTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mEnter_mpin_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:text="Enter MPIN"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/mTxt_title"
+        app:layout_constraintTop_toBottomOf="@id/mTxt_title" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mEnter_MPIN_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/enter_otp_shpe"
+        android:elevation="@dimen/_1sdp"
+        android:paddingVertical="@dimen/_8sdp"
+        app:layout_constraintTop_toBottomOf="@+id/mEnter_mpin_title">
+
+        <com.myTara567.app.new_ui_update.OtpEditText
+            android:id="@+id/mEnter_MPIN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:cursorVisible="true"
+            android:digits="1234567890"
+            android:gravity="center"
+            android:hint="****"
+            android:inputType="number"
+            android:maxLength="4"
+            android:textCursorDrawable="@drawable/custom_cursor_drawable"
+            android:textColor="@color/blue_color"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mConfrim_mpin_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_22sdp"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:text="Confirm MPIN"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@id/mEnter_MPIN_Layout"
+        app:layout_constraintTop_toBottomOf="@id/mEnter_MPIN_Layout" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mForgot_MPIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/poppins_medium_500"
+        android:padding="@dimen/_4sdp"
+        android:text="Forgot MPIN?"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mEnter_MPIN_Layout" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mConfirm_MPIN_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_11sdp"
+        android:background="@drawable/enter_otp_shpe"
+        android:elevation="@dimen/_1sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mConfrim_mpin_title"
+        tools:layout_editor_absoluteX="19dp">
+
+        <com.myTara567.app.new_ui_update.OtpEditText
+            android:id="@+id/mEnter_Confirm_MPIN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:cursorVisible="true"
+            android:digits="1234567890"
+            android:gravity="center"
+            android:hint="****"
+            android:inputType="number"
+            android:maxLength="4"
+            android:textColor="@color/semi_transparent_grey"
+
+            android:textCursorDrawable="@drawable/custom_cursor_drawable"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:background="@drawable/btn_blue_bg"
+        android:elevation="@dimen/_3sdp"
+        android:fontFamily="@font/poppins_semi_bold_600"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="ENTER MPIN"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mConfirm_MPIN_Layout" />
+
+    <LinearLayout
+        android:id="@+id/mLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_regular_400"
+            android:text="Have an account?"
+            android:textSize="@dimen/_8ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_semi_bold_600"
+            android:text="Sign In"
+            android:textColor="@color/blue_color"
+            android:textSize="@dimen/_9ssp" />
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fingerprint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="8dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Unlock with Biometric"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFingerprintIcon"
+            app:layout_constraintStart_toEndOf="@+id/ivFingerprintIcon"
+            app:layout_constraintTop_toTopOf="@+id/ivFingerprintIcon" />
+
+        <ImageView
+            android:id="@+id/ivFingerprintIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="Fingerprint Icon"
+
+            android:src="@drawable/fingericon"
+            app:tint="#0179FF" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

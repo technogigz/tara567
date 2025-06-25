@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/ivActive"
+        android:icon="@drawable/history_image_image"
+        android:title="History"/>
+
+    <item android:id="@+id/viService"
+        android:icon="@drawable/all_bids_image"
+        android:title="All Bids"/>
+
+    <item android:id="@+id/ivManagement"
+        android:icon="@drawable/home_image"
+        android:title="Home"/>
+
+    <item android:id="@+id/ivPetService"
+        android:icon="@drawable/wallet_image"
+        android:title="Wallet"/>
+
+    <item android:id="@+id/mChate"
+        android:icon="@drawable/chate_image"
+        android:title="Chat"/>
+</menu>
