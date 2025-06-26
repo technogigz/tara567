@@ -50,14 +50,58 @@ class HomePageActivity : AppCompatActivity(){
     private lateinit var tarText: SpannableString
     private lateinit var numberText: SpannableString
 
-    val preference: SharedPreferences? = null
+    private val preferenceChangeListener = SharedPreferences.OnSharedPreferenceChangeListener { sharedPreferences, key ->
+        if (key == "account_block_status") {
+            val status = sharedPreferences.getString("account_block_status", "")
+            updateAccountActivationUI(status)
+        }
+    }
 
+    private fun updateAccountActivationUI(status: String?) {
+        if (status == "0") {
+            binding.mHistoryFragment.visibility = View.GONE
+            binding.mWalletFragment.visibility = View.GONE
+            binding.mHistoryFragment.visibility = View.GONE
+            binding.mAllBidsFragment.visibility = View.GONE
+            binding.walletLayout.visibility = View.GONE
+
+
+            binding.navigationView.findViewById<View>(R.id.mAccount_Statement)?.visibility = View.GONE
+            binding.navigationView.findViewById<View>(R.id.mAccount_image)?.visibility = View.GONE
+            binding.navigationView.findViewById<View>(R.id.mGame_image)?.visibility = View.GONE
+            binding.navigationView.findViewById<View>(R.id.mGame_rate)?.visibility = View.GONE
+            binding.navigationView.findViewById<View>(R.id.mTerms_Conditions)?.visibility = View.GONE
+            binding.navigationView.findViewById<View>(R.id.mTerms_image)?.visibility = View.GONE
+            binding.navigationView.findViewById<View>(R.id.mVideos_image)?.visibility = View.GONE
+            binding.navigationView.findViewById<View>(R.id.mVideos)?.visibility = View.GONE
+
+        } else {
+            binding.mHistoryFragment.visibility = View.VISIBLE
+            binding.mWalletFragment.visibility = View.VISIBLE
+            binding.mHistoryFragment.visibility = View.VISIBLE
+            binding.mAllBidsFragment.visibility = View.VISIBLE
+            binding.walletLayout.visibility = View.VISIBLE
+
+            binding.navigationView.findViewById<View>(R.id.mAccount_Statement)?.visibility = View.VISIBLE
+            binding.navigationView.findViewById<View>(R.id.mAccount_image)?.visibility = View.VISIBLE
+            binding.navigationView.findViewById<View>(R.id.mGame_image)?.visibility = View.VISIBLE
+            binding.navigationView.findViewById<View>(R.id.mGame_rate)?.visibility = View.VISIBLE
+            binding.navigationView.findViewById<View>(R.id.mTerms_Conditions)?.visibility = View.VISIBLE
+            binding.navigationView.findViewById<View>(R.id.mTerms_image)?.visibility = View.VISIBLE
+            binding.navigationView.findViewById<View>(R.id.mVideos_image)?.visibility = View.VISIBLE
+            binding.navigationView.findViewById<View>(R.id.mVideos)?.visibility = View.VISIBLE
+
+        }
+    }
     var gameDataModels: ArrayList<gameDataModel> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        val sharedPref = this?.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        sharedPref?.registerOnSharedPreferenceChangeListener(preferenceChangeListener)
 
         tarText = SpannableString("TARA").apply {
             setSpan(
@@ -83,6 +127,7 @@ class HomePageActivity : AppCompatActivity(){
         mLoadFragment("Home")
         mClickListener()
 
+
         val bottomNavigationView = binding.ivBottomSheep
 
         ViewCompat.setOnApplyWindowInsetsListener(bottomNavigationView) { view, insets ->
@@ -95,6 +140,7 @@ class HomePageActivity : AppCompatActivity(){
             // Return insets so that other views can also consume them if needed
             insets
         }
+
 
 
         // Get the appKey from SharedPreferences
@@ -384,5 +430,6 @@ class HomePageActivity : AppCompatActivity(){
         })
 
     }
+
 
 }

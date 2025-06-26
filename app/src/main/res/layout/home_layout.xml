@@ -85,40 +85,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:drawableStart="@drawable/whatsapp_image"
-        android:drawablePadding="@dimen/_3sdp"
-        android:fontFamily="@font/poppins_semi_bold_600"
-        android:gravity="center"
-        android:visibility="gone"
-        android:text="9090909090"
-        android:textColor="#007AFF"
-        android:textSize="@dimen/_12ssp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
-
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/whatsApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:drawableStart="@drawable/whatsapp_image"
-        android:drawablePadding="@dimen/_3sdp"
-        android:fontFamily="@font/poppins_semi_bold_600"
-        android:gravity="center"
-        android:text="9090909090"
-        android:visibility="gone"
-        android:textColor="#007AFF"
-        android:textSize="@dimen/_12ssp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/phone"
-        app:layout_constraintBottom_toBottomOf="@+id/phone"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -131,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="@dimen/_13sdp"
         android:background="@drawable/comman_bg_layout"
-        app:layout_constraintTop_toBottomOf="@+id/phone">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
         <View
             android:id="@+id/View"
             android:layout_width="@dimen/_5sdp"

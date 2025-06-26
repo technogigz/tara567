@@ -62,6 +62,10 @@ class HomeFragment : Fragment() {
     var mMarquu_title:TextView?=null
     var mWhatAppNumber:TextView?=null
     var whatsApp_a:TextView?=null
+    var layoutA:ConstraintLayout?=null
+    var imageA:ImageView?=null
+    var imageB:ImageView?=null
+    var mLayout:ConstraintLayout?=null
 
 
 
@@ -85,6 +89,33 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+    private val preferenceChangeListener = SharedPreferences.OnSharedPreferenceChangeListener { sharedPreferences, key ->
+        if (key == "account_block_status") {
+            val status = sharedPreferences.getString("account_block_status", "")
+            updateAccountActivationUI(status)
+        }
+    }
+
+    private fun updateAccountActivationUI(status: String?) {
+        if (status == "0") {
+            layoutA?.visibility = View.GONE
+            imageA?.visibility = View.GONE
+            imageB?.visibility = View.GONE
+            mWhatAppNumber?.visibility = View.GONE
+            whatsApp_a?.visibility = View.GONE
+            mLayout?.visibility = View.GONE
+
+        } else {
+            layoutA?.visibility = View.VISIBLE
+            imageA?.visibility = View.VISIBLE
+            imageB?.visibility = View.VISIBLE
+            mWhatAppNumber?.visibility = View.VISIBLE
+            whatsApp_a?.visibility = View.VISIBLE
+            mLayout?.visibility = View.VISIBLE
+        }
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recycler = view.findViewById(R.id.home_recycler)
@@ -92,19 +123,16 @@ class HomeFragment : Fragment() {
         mMarquu_title = view.findViewById(R.id.marquu_title)
         mWhatAppNumber = view.findViewById(R.id.Whataap_number)
         whatsApp_a = view.findViewById(R.id.whatsApp_a)
-        var imageA: ImageView = view.findViewById(R.id.image_a)
-        var imageB: ImageView = view.findViewById(R.id.image_b)
-        var layoutA: ConstraintLayout = view.findViewById(R.id.mLayout)
+        imageA = view.findViewById(R.id.image_a)
+        imageB = view.findViewById(R.id.image_b)
+        layoutA = view.findViewById(R.id.mLayout)
+        mLayout = view.findViewById(R.id.mLayout)
 
-        // ✅ Get betting_status from SharedPreferences
         val sharedPref = context?.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-        accountActivationStatus = sharedPref?.getString("account_block_status", "").toString()
+        sharedPref?.registerOnSharedPreferenceChangeListener(preferenceChangeListener)
 
-        if (accountActivationStatus == "0"){
-            layoutA.visibility = View.GONE
-            imageA.visibility = View.GONE
-            imageB.visibility = View.GONE
-        }
+        // Optional: call manually to set initial state
+        updateAccountActivationUI(sharedPref?.getString("account_block_status", ""))
 
         mIntView()
     }
@@ -137,6 +165,22 @@ class HomeFragment : Fragment() {
 
 
     }
+
+    override fun onResume() {
+        super.onResume()
+        val sharedPref = context?.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        sharedPref?.registerOnSharedPreferenceChangeListener(preferenceChangeListener)
+
+        // Optional: call manually to set initial state
+        updateAccountActivationUI(sharedPref?.getString("account_block_status", ""))
+    }
+
+    override fun onPause() {
+        super.onPause()
+        val sharedPref = context?.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        sharedPref?.unregisterOnSharedPreferenceChangeListener(preferenceChangeListener)
+    }
+
 
     private fun setSliderImage() {
         val data = controller.getInstance().api.sliderImage(js)

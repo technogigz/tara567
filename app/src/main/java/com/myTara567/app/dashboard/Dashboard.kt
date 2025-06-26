@@ -55,6 +55,7 @@ import java.util.TimerTask
 class Dashboard : AppCompatActivity() {
 
     var spUnique_token: SharedPreferences? = null
+    var context: Context? = null
     var js: JsonObject? = null
     var unique_token: String? = null
     var appKey: String? = null
@@ -114,17 +115,64 @@ class Dashboard : AppCompatActivity() {
     var link_btn_text: String? = null
     var view: View? = null
 
+    private val preferenceChangeListener = SharedPreferences.OnSharedPreferenceChangeListener { sharedPreferences, key ->
+        if (key == "account_block_status") {
+            val status = sharedPreferences.getString("account_block_status", "")
+            updateAccountActivationUI(status)
+        }
+    }
+
+    private fun updateAccountActivationUI(status: String?) {
+        if (status == "0") {
+
+        } else {
+
+        }
+    }
+
+
 
     @SuppressLint("HardwareIds")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard)
+
+// llDepositOnline = findViewById(R.id.ll_depositOnline);
+        //notificationLayout = findViewById(R.id.notificationLayout);
+
+        notification_counter = findViewById(R.id.notification_counter)
+
+        starline = findViewById(R.id.starline)
+        phone = findViewById(R.id.phone)
+
+        //telegram = findViewById(R.id.telegram);
+        whatsApp = findViewById(R.id.whatsApp)
+        navigationView = findViewById(R.id.navigationView)
+        drawerLayout = findViewById(R.id.drawerLayout)
+        navIcon = findViewById(R.id.nav_icon)
+        recycler = findViewById(R.id.home_recycler)
+        //walletLayout = findViewById(R.id.walletLayout);
+        //profileImg = findViewById(R.id.profileImg);
+        walletBalance = findViewById(R.id.walletBalanceTxt)
+        view = navigationView!!.getHeaderView(0)
+        textViewHeader = view!!.findViewById(R.id.headerName)
+        textViewMobile = view!!.findViewById(R.id.textView3)
+        profileText = view!!.findViewById(R.id.nameStart)
+        otherGames = findViewById(R.id.otherGames)
+        phone?.visibility = View.GONE
+
         // Hide blocked UI if account is already blocked
         val pref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         account_block_status = pref.getString("account_block_status", "")
 
         if (account_block_status == "0") {
             hideBlockedUI()
+            phone?.visibility = View.GONE
+            whatsApp?.visibility = View.GONE
+        }
+        else if (account_block_status == "1") {
+            phone?.visibility = View.GONE
+            whatsApp?.visibility = View.GONE
         }
 
 
@@ -168,31 +216,6 @@ class Dashboard : AppCompatActivity() {
         unique = spUnique_token!!.getString("unique_token", "")
         Log.d("signUp editor", "home: $unique")
 
-
-
-
-        // llDepositOnline = findViewById(R.id.ll_depositOnline);
-        //notificationLayout = findViewById(R.id.notificationLayout);
-
-        notification_counter = findViewById(R.id.notification_counter)
-
-        starline = findViewById(R.id.starline)
-        phone = findViewById(R.id.phone)
-                //telegram = findViewById(R.id.telegram);
-        whatsApp = findViewById(R.id.whatsApp)
-        navigationView = findViewById(R.id.navigationView)
-        drawerLayout = findViewById(R.id.drawerLayout)
-        navIcon = findViewById(R.id.nav_icon)
-        recycler = findViewById(R.id.home_recycler)
-        //walletLayout = findViewById(R.id.walletLayout);
-        //profileImg = findViewById(R.id.profileImg);
-        walletBalance = findViewById(R.id.walletBalanceTxt)
-        view = navigationView!!.getHeaderView(0)
-        textViewHeader = view!!.findViewById(R.id.headerName)
-        textViewMobile = view!!.findViewById(R.id.textView3)
-        profileText = view!!.findViewById(R.id.nameStart)
-        otherGames = findViewById(R.id.otherGames)
-        phone?.visibility = View.GONE
 
 
 
@@ -459,6 +482,7 @@ class Dashboard : AppCompatActivity() {
     }
 
 
+    @SuppressLint("GestureBackNavigation")
     override fun onBackPressed() {
         super.onBackPressed()
         val v = LayoutInflater.from(this@Dashboard).inflate(R.layout.exit_dialog_box, null)
@@ -542,13 +566,21 @@ class Dashboard : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        val sharedPref = context?.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        sharedPref?.registerOnSharedPreferenceChangeListener(preferenceChangeListener)
 
-        val pref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-        if (pref.getString("account_block_status", "") == "0") {
-            hideBlockedUI()
-        }
+        // Optional: call manually to set initial state
+        updateAccountActivationUI(sharedPref?.getString("account_block_status", ""))
         setRecyclerViewData()
 
+    }
+
+
+
+    override fun onPause() {
+        super.onPause()
+        val sharedPref = context?.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        sharedPref?.unregisterOnSharedPreferenceChangeListener(preferenceChangeListener)
     }
 
     private fun setRecyclerViewData() {
@@ -561,6 +593,11 @@ class Dashboard : AppCompatActivity() {
                 betting_status = response.body()!!["betting_status"].asString
                 account_block_status = response.body()!!["account_block_status"].asString
 
+                val sharedPref = context?.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                if (sharedPref != null) {
+                    sharedPref.edit().putString("account_block_status", account_block_status).apply()
+                    Log.d("account_block_status", "onResponse: $account_block_status")
+                }
 
                 withdraw_status = response.body()!!["withdraw_status"].asString
                 transfer_point_status = response.body()!!["transfer_point_status"].asString
