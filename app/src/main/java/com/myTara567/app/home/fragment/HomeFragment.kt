@@ -35,6 +35,7 @@ import com.myTara567.app.serverApi.controller
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import androidx.core.net.toUri
 
 class HomeFragment : Fragment() {
     private var spUniqueToken: SharedPreferences? = null
@@ -105,6 +106,7 @@ class HomeFragment : Fragment() {
             whatsApp_a?.visibility = View.GONE
             mLayout?.visibility = View.GONE
 
+
         } else {
             layoutA?.visibility = View.VISIBLE
             imageA?.visibility = View.VISIBLE
@@ -127,6 +129,18 @@ class HomeFragment : Fragment() {
         imageB = view.findViewById(R.id.image_b)
         layoutA = view.findViewById(R.id.mLayout)
         mLayout = view.findViewById(R.id.mLayout)
+
+        mWhatAppNumber?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = ("https://wa.me/919956770567" ).toUri()
+            startActivity(intent)
+        }
+
+        whatsApp_a?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = ("https://wa.me/919956770567" ).toUri()
+            startActivity(intent)
+        }
 
         val sharedPref = context?.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         sharedPref?.registerOnSharedPreferenceChangeListener(preferenceChangeListener)
