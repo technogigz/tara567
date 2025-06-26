@@ -47,24 +47,9 @@ class HomePageActivity : AppCompatActivity(){
     var unique_token: String? = null
     var appKey: String? = null
     var unique: String? = null
-    val tarText = SpannableString("TARA").apply {
-        setSpan(
-            ForegroundColorSpan(
-                ContextCompat.getColor(
-                    this@HomePageActivity,
-                    R.color.blue_color
-                )
-            ),
-            0, length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-        )
-    }
+    private lateinit var tarText: SpannableString
+    private lateinit var numberText: SpannableString
 
-    val numberText = SpannableString("567").apply {
-        setSpan(
-            ForegroundColorSpan(ContextCompat.getColor(this@HomePageActivity, R.color.black)),
-            0, length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-        )
-    }
     val preference: SharedPreferences? = null
 
     var gameDataModels: ArrayList<gameDataModel> = ArrayList()
@@ -73,6 +58,25 @@ class HomePageActivity : AppCompatActivity(){
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        tarText = SpannableString("TARA").apply {
+            setSpan(
+                ForegroundColorSpan(
+                    ContextCompat.getColor(
+                        this@HomePageActivity,
+                        R.color.blue_color
+                    )
+                ),
+                0, length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
+
+        numberText = SpannableString("567").apply {
+            setSpan(
+                ForegroundColorSpan(ContextCompat.getColor(this@HomePageActivity, R.color.black)),
+                0, length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
 
         setupDrawerLayout()
         maSpannableText()
